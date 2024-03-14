@@ -11,6 +11,12 @@ class Solution {
                 else if (stck.peek() + a == 0) stck.pop();
             }
         }
-        return stck.stream().mapToInt(i->i).toArray();
+        int[] res = new int[stck.size()];
+        int i = stck.size() - 1;
+        while (!stck.isEmpty()) {
+            res[i--] = stck.peek();
+            stck.pop();
+        }
+        return res;
     }
 }
