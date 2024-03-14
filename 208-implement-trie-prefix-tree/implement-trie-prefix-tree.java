@@ -15,10 +15,7 @@ class Trie
         Node node=root;
         for(char ch:word.toCharArray())
         {
-            if(node.children[ch-'a']==null)
-            {
-                node.children[ch-'a']=new Node();
-            }
+            if(node.children[ch-'a']==null) node.children[ch-'a']=new Node();
             node=node.children[ch-'a'];
         }
         node.eow=true;
@@ -28,10 +25,7 @@ class Trie
         Node node=root;
         for(char ch:word.toCharArray())
         {
-            if(node.children[ch-'a']==null)
-            {
-                return false;
-            }
+            if(node.children[ch-'a']==null) return false;
             node=node.children[ch-'a'];
         }
         return node.eow;
@@ -42,10 +36,7 @@ class Trie
                 Node node=root;
         for(char ch:prefix.toCharArray())
         {
-            if(node.children[ch-'a']==null)
-            {
-                return false;
-            }
+            if(node.children[ch-'a']==null) return false;
             node=node.children[ch-'a'];
         }
         return true;
