@@ -1,14 +1,20 @@
 class Solution {
     public int[] singleNumber(int[] nums) {
-        HashMap<Integer,Integer>map=new HashMap<>();
-        for(int i:nums){
-            map.put(i,map.getOrDefault(i,0)+1);
+        int ans =0 ;
+        for(int i= 0; i < nums.length;i++)
+        {
+            ans = ans ^ nums[i];
+
         }
-        int[] ans=new int[2];
-        int size=0;
-        for(Map.Entry<Integer,Integer>mp:map.entrySet()){
-            if(mp.getValue()==1) ans[size++]=mp.getKey();
+        System.out.println(ans);
+        ans &= -ans;
+        System.out.println(ans);
+        int[] result = new int[2];
+        for(int n: nums)
+        {
+            if((ans & n) == 0)result[0] ^= n;
+            else result[1] ^= n;
         }
-        return ans;
+        return result;
     }
 }
