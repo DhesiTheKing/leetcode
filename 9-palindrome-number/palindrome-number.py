@@ -6,7 +6,5 @@ class Solution(object):
         """
         y = str(x)
         b = y[::-1]
-        print(b+" "+y)
-
         return b==y
         
