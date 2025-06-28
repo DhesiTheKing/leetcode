@@ -10,7 +10,6 @@ class Solution {
                 }
                 else break;
             }
-            // System.out.println("word :"+words[i]+" start: "+start+" end: "+end);
             if(start>=end || (words[i].length()==2 && start>end)){
                 ans = words[i];
                 break;
